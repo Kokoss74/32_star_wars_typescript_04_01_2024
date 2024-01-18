@@ -1,6 +1,6 @@
 import React from "react";
-import Friend from "./main/Friend";
-import { friendsFoto } from "../utils";
+import Friend from "./Friend";
+import { friendsFoto } from "../../utils";
 
 const DreamTeam = () => {
   return (

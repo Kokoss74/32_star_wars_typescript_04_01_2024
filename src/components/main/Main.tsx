@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "./Hero";
-import DreamTeam from "../DreamTeam";
+import DreamTeam from "../main/DreamTeam";
 import FarGalaxy from "./FarGalaxy";
 import AboutUs from "../../pages/AboutUs";
 import StarWars from "../../pages/StarWars";
@@ -8,7 +8,7 @@ import Contact from "../../pages/Contact";
 import { navItems } from "../../utils";
 import Home from "../../pages/Home";
 
-const Main = ({ currentPage }) => {
+const Main: React.FC<{ currentPage: string}> = ({ currentPage }) => {
   switch (currentPage) {
     case navItems[1]:
       return (

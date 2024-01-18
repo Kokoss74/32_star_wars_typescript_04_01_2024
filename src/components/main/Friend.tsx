@@ -1,7 +1,12 @@
 import React from "react";
 import style from '../../css-modules/borderRound.module.css';
 
-const Friend = ({ photo, number }) => {
+interface IFriendProps {
+  photo: string,
+  number: number
+}
+
+const Friend:React.FC<IFriendProps> = ({ photo, number }) => {
     let friendStyle = 'col-4 p-1 '; // пробел в конце!
 
     if (number === 7) friendStyle += style.bottomLeft;

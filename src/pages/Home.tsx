@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../components/main/Hero'
-import DreamTeam from '../components/DreamTeam'
+import DreamTeam from '../components/main/DreamTeam'
 import FarGalaxy from '../components/main/FarGalaxy'
 
 const Home = () => {

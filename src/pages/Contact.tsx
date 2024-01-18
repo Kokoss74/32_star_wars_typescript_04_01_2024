@@ -3,12 +3,12 @@ import { BASE_URL, month } from "../utils";
 // import Planet from "../components/main/Planet"; // использовал в домашке
 
 const Contact = () => {
-  const [planets, setPlanets] = useState([]);
+  const [planets, setPlanets] = useState<string[]>([]);
 
   const fetchPlanets = async () => {
     const response = await fetch(`${BASE_URL}/v1/planets`);
-    const data = await response.json();
-    const planets = data.map((planet) => planet.name); // ! так проще
+    const data: { name: string}[] = await response.json();
+    const planets: string[] = data.map((planet) => planet.name); // ! так проще
     // const planets = Array.from(data, (elem) => elem.name); // так сделал в домашке
     setPlanets(planets);
 
@@ -21,11 +21,11 @@ const Contact = () => {
   };
 
   useEffect(() => {
-    const planets = JSON.parse(localStorage.getItem('planets'));
+    const planets = JSON.parse(localStorage.getItem('planets')!);
     planets && (Date.now() - planets.time < month) ? 
       setPlanets(planets.payload) : 
       fetchPlanets();
-      console.log(JSON.parse(localStorage.getItem('planets')));
+      console.log(JSON.parse(localStorage.getItem('planets')!));
   }, []);
 
   return (

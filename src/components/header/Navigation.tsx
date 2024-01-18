@@ -1,8 +1,8 @@
 import React from "react";
 import Navitem from "./Navitem";
-import { navItems } from "../../utils";
+import { IChange, navItems } from "../../utils";
 
-const Navigation = ({ changePage }) => {
+const Navigation = ({ changePage }: IChange) => {
   return (
     <nav className="fixed-top mt-2 ms-4 ">
       <ul className="nav">
