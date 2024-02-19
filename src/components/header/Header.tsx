@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navigation from "./Navigation";
-import { IChange } from "../../utils";
+import { IChange, characters } from "../../utils/constants";
+import { AppContext } from "../../utils/context";
 
-const Header = ({ changePage }: IChange) => {
+const Header = () => {
+  const { hero } = useContext(AppContext);
+
   return (
     <header>
-      <Navigation changePage={changePage}/>
-      <h1 className="text-center py-4">Luke Skywalker</h1>
+      <Navigation />
+      <h1 className="text-center py-4">{characters[hero].name}</h1>
     </header>
   );
 };

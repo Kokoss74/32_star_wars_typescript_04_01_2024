@@ -3,18 +3,29 @@ import "./App.css";
 import Footer from "./components/Footer";
 import Header from "./components/header/Header";
 import Main from "./components/main/Main";
-import { Change, navItems } from "./utils";
+import { Change, defaultHero, navItems } from "./utils/constants";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import StarWars from "./pages/StarWars";
+import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
+import { AppContext } from "./utils/context";
 // import Users from "./components/Users";
 
 function App() {
-  const [currentPage, setCurrentPage] = useState<string>(navItems[0]);
+  // const [currentPage, setCurrentPage] = useState<string>(navItems[0]);
   // const [id, setId] = useState(1);
-  const changePage: Change = (page) => setCurrentPage(page);
+  const [hero, setHero] = useState(defaultHero);
+
+  // const changePage: Change = (page) => setCurrentPage(page);
+  
   return (
     <div className="container-fluid">
       {/* <Users userId={id} change={setId} /> */}
-      <Header changePage={changePage} />
-      <Main currentPage={currentPage} />
+      <AppContext.Provider value={{ hero, changeHero: setHero }} >
+          <Header />
+          <Main />
+      </AppContext.Provider>
       <Footer />
     </div>
   );

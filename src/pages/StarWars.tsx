@@ -1,4 +1,6 @@
 import React from 'react'
+import { withHeroId } from '../components/hoc/withHeroId'
+import { navItems } from '../utils/constants'
 
 const StarWars = () => {
   return (
@@ -6,4 +8,4 @@ const StarWars = () => {
   )
 }
 
-export default StarWars
+export default withHeroId(navItems[2].route)(StarWars);

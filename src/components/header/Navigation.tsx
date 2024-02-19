@@ -1,13 +1,13 @@
 import React from "react";
 import Navitem from "./Navitem";
-import { IChange, navItems } from "../../utils";
+import { IChange, navItems } from "../../utils/constants";
 
-const Navigation = ({ changePage }: IChange) => {
+const Navigation = () => {
   return (
     <nav className="fixed-top mt-2 ms-4 ">
       <ul className="nav">
-        {navItems.map((e) => (
-          <Navitem key={e} title={e} changePage={changePage} />
+        {navItems.map((item, index) => (
+          <Navitem key={index} item={item} />
         ))}
       </ul>
     </nav>

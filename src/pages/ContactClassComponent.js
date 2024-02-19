@@ -1,5 +1,5 @@
 import React from "react";
-import { BASE_URL, month } from "../utils";
+import { BASE_URL, month } from "../utils/constants";
 
 class ContactClassComponent extends React.Component {
   // дефолтная запись для любого классового компонента

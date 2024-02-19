@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BASE_URL, month } from "../utils";
+import { BASE_URL, month, navItems } from "../utils/constants";
+import { withHeroId } from "../components/hoc/withHeroId";
 // import Planet from "../components/main/Planet"; // использовал в домашке
 
 const Contact = () => {
@@ -121,4 +122,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default withHeroId(navItems[3].route)(Contact);
